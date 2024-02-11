@@ -176,7 +176,7 @@ header nav ul a:hover {
 }
 
 .form_box .back_img {
-    background-image: url("/images/background_form.jpg");
+    background-image: URL("../images/background_form.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 80vh;
