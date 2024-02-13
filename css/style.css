@@ -181,7 +181,7 @@ header nav a:hover {
     position: relative;
 }
 
-.menu {
+.menu_login {
     display: none;
     text-align: center;
     position: absolute;
@@ -201,11 +201,11 @@ header nav a:hover {
     z-index: 3;
 }
 
-.menu p {
+.menu_login p {
     margin: 10px 0;
 }
 
-.menu a {
+.menu_login a {
     margin: 10px 15px;
     border-radius: 10px;
     background-color: var(--color1);
@@ -218,11 +218,11 @@ header nav a:hover {
     height: 35px;
     text-decoration: none;
 }
-.menu a:hover {
+.menu_login a:hover {
     background-color: var(--hover);
 
 }
-.login_menu:hover .menu {
+.login_menu:hover .menu_login {
     display: flex;
 
 }
