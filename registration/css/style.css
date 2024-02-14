@@ -7,8 +7,10 @@
     --color6: #446D6E;
     --color7: #F9F9F6;
     --hover: #2F6B6E;
-
-
+    --success: #00B73F;
+    --success-hover: #008b31;
+    --danger: #ff3860;
+    --danger-hover: #bb2443;
 }
 
 body {
@@ -130,6 +132,7 @@ header nav ul {
         background-color: rgb(0 0 0 /50%);
         color: #fff;
         text-align: right;
+        z-index: 10;
     }
 
     header nav .menu li:hover a {
@@ -162,15 +165,6 @@ header nav a:hover {
     border-bottom: 1px solid var(--color4);
 }
 
-/* .btn1 {
-    width: 100px;
-    height: 40px;
-    border-radius: 10px;
-    background-color: var(--color1);
-    color: white;
-    border: none;
-    cursor: pointer;
-} */
 
 /* End Header */
 /* Start Form  */
@@ -282,7 +276,7 @@ header nav a:hover {
     padding: 5px;
     border-radius: 30px;
     outline: none;
-    border: none;
+    border: 1px solid var(--color4);
     text-align: right;
     text-indent: 30px;
 }
@@ -318,14 +312,14 @@ header nav a:hover {
     padding: 15px;
     border-radius: 30px;
     outline: none;
-    border: none;
+    border: 1px solid var(--color4);
     text-align: right;
     text-indent: 30px;
 
 }
 
 .form_box .back_img form input:focus {
-    border: 1px solid var(--color4);
+    border: 1px solid var(--success);
 }
 
 @media (max-width: 450px) {
@@ -333,12 +327,22 @@ header nav a:hover {
     .form_box .back_img form .input-box-name input,
     .form_box .back_img form .input-box input {
         width: 100%;
+        font-size: 15px;
     }
 
     .form_box .back_img form input::placeholder {
-        font-size: 10px;
+        font-size: 15px;
         text-indent: 30px;
 
+    }
+
+    .form_box .back_img form .input-box-name {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form_box .back_img form .input-box-name .last-name i {
+        transform: translate(-50%, -50%);
     }
 }
 
@@ -358,7 +362,7 @@ header nav a:hover {
     width: 100%;
 }
 
-.form_box .back_img form .submit_btn button {
+.form_box .back_img form .submit_btn input {
     padding: 10px 30px;
     width: 100%;
     cursor: pointer;
@@ -370,7 +374,7 @@ header nav a:hover {
     transition: 0.5s;
 }
 
-.form_box .back_img form .submit_btn button:hover {
+.form_box .back_img form .submit_btn input:hover {
     background-color: var(--hover);
 }
 
@@ -426,6 +430,41 @@ header nav a:hover {
     color: var(--color3);
 }
 
+/* Error message */
 
+
+.error_message {
+    display: none;
+    position: absolute;
+    transition: 0.5s all;
+    font-size: 13px;
+    width: 50%;
+    text-align: center;
+    padding: 7px 5px;
+    border-radius: 10px;
+    background-color: var(--danger);
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+
+.error_message::before {
+    content: "";
+    position: absolute;
+    top: 85%;
+    right: 36%;
+    transform: translate(0%, 0%);
+    border-bottom: solid 10px transparent;
+    border-top: solid 10px var(--danger);
+    border-left: solid 10px transparent;
+    border-right: solid 10px transparent;
+}
+
+@media (max-width: 500px) {
+    .error_message {
+        font-size: 10px;
+        width: 50%;
+    }
+}
 
 /* End Form  */
