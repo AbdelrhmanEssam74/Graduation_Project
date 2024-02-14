@@ -7,14 +7,15 @@
     --color6: #446D6E;
     --color7: #F9F9F6;
     --hover: #2F6B6E;
-
-
+    --success: #00B73F;
+    --success-hover: #008b31;
+    --danger: #ff3860;
+    --danger-hover: #bb2443;
 }
 
 body {
     background-color: var(--color7);
     font-family: "Cairo";
-
 }
 
 * {
@@ -130,6 +131,7 @@ header nav ul {
         background-color: rgb(0 0 0 /50%);
         color: #fff;
         text-align: right;
+        z-index: 10;
     }
 
     header nav .menu li:hover a {
@@ -162,69 +164,234 @@ header nav a:hover {
     border-bottom: 1px solid var(--color4);
 }
 
-.btn1 {
-    width: 100px;
-    height: 40px;
-    border-radius: 10px;
-    background-color: var(--color1);
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: 0.5s all;
+
+/* End Header */
+/* Start Form  */
+.form_box {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.btn1:hover {
-    background-color: var(--hover);
+.form_box .back_img {
+    background-image: url("../images/background_form.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 80vh;
+    min-width: 120vh;
+    padding: 10px 50px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
 }
 
-.login_menu {
+.form_box .form_content {
+    padding: 10px 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+.form_box .form_content p {
+    text-align: right;
+    font-size: 40px;
+    line-height: 1.5;
+    margin-bottom: 35px;
+}
+
+.form_box .form_content h1 span {
+    font-size: 50px;
+}
+
+@media (max-width: 768px) {
+    .form_box {
+        padding: 0 10px;
+    }
+
+    .form_box .back_img {
+        min-width: 100%;
+        padding: 10px 20px;
+
+    }
+}
+
+@media (max-width: 400px) {
+    .form_box {
+        padding: 0 10px;
+    }
+
+    .form_box .back_img {
+        min-width: fit-content;
+        padding: 10px 20px;
+
+    }
+
+    .form_box .form_content p {
+        font-size: 30px;
+
+    }
+}
+
+
+.form_box .back_img form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 25px;
+    gap: 15px;
+    justify-content: end;
+    align-items: end;
+}
+
+.form_box .back_img form .input-box {
+    width: 100%;
     position: relative;
 }
 
-.menu_login {
-    display: none;
-    text-align: center;
+.form_box .back_img form .input-box input {
+    width: 300px;
+    height: 45px;
+    padding: 15px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    text-indent: 30px;
+}
+
+.form_box .back_img form .input-box input:focus {
+    border: 1px solid var(--color4);
+}
+
+@media (max-width: 450px) {
+    .form_box .back_img form .input-box input {
+        width: 100%;
+    }
+}
+
+.input-box input::placeholder {
+    text-indent: 30px;
+}
+
+.input-box i {
     position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    width: 200px;
-    height: 200px;
-    padding: 30px 5px;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 15px;
-    border: none;
-    box-shadow: 6px 5px 11px -9px;
-    transition: 0.7s all;
-    z-index: 3;
+    top: 50%;
+    right: 0;
+    transform: translate(-65%, -50%);
+    color: var(--color4);
+    font-size: 20px;
 }
 
-.menu_login p {
-    margin: 10px 0;
-}
-
-.menu_login a {
-    margin: 10px 15px;
-    border-radius: 10px;
-    background-color: var(--color1);
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: 0.5s all;
-    width: 70%;
-    padding: 7px 15px;
-    height: 35px;
-    text-decoration: none;
-}
-.menu_login a:hover {
-    background-color: var(--hover);
-
-}
-.login_menu:hover .menu_login {
+.form_box .back_img form .check-box {
+    width: 100%;
     display: flex;
-
+    gap: 10px;
+    padding: 10px 0;
+    justify-content: end;
 }
 
-/* End Header */
+.form_box .back_img form .check-box label {
+    color: #fff;
+}
+
+.form_box .back_img form .check-box input {
+    width: 20px;
+    cursor: pointer;
+}
+
+.form_box .back_img form .submit_btn {
+    width: 100%;
+}
+
+.form_box .back_img form .submit_btn button {
+    padding: 10px 30px;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    background-color: var(--color1);
+    transition: 0.5s;
+}
+
+.form_box .back_img form .submit_btn button:hover {
+    background-color: var(--hover);
+}
+
+.form_box .back_img form a {
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    transition: 0.5s all;
+}
+
+.form_box .back_img form a:hover {
+    text-decoration: underline;
+    color: var(--color7);
+}
+
+/* show password */
+#eyeShowPassword {
+    top: 50%;
+    left: 0;
+    transform: translate(50%, -50%);
+    color: var(--color4);
+    font-size: 20px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+#eyeHidePassword {
+    top: 50%;
+    left: 0;
+    transform: translate(50%, -50%);
+    color: var(--color4);
+    font-size: 20px;
+    cursor: pointer;
+    width: fit-content;
+    display: none;
+}
+
+/* Error message */
+
+
+.error_message {
+    display: none;
+    position: absolute;
+    transition: 0.5s all;
+    font-size: 13px;
+    width: 50%;
+    text-align: center;
+    padding: 7px 5px;
+    border-radius: 10px;
+    background-color: var(--danger);
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+
+.error_message::before {
+    content: "";
+    position: absolute;
+    top: 85%;
+    right: 36%;
+    transform: translate(0%, 0%);
+    border-bottom: solid 10px transparent;
+    border-top: solid 10px var(--danger);
+    border-left: solid 10px transparent;
+    border-right: solid 10px transparent;
+}
+
+@media (max-width: 500px) {
+    .error_message {
+        font-size: 10px;
+        width: 50%;
+    }
+}
+
+/* End Form  */
