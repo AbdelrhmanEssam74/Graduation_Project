@@ -23,7 +23,6 @@
     <!-- Start Header -->
     <header id="header">
         <div class="container">
-            <!-- <button class="btn1">الدخول</button> -->
             <nav class="navigation">
                 <i class="bx bx-menu toggle_menu black" id="menuicon"></i>
                 <ul id="menu">
@@ -35,7 +34,7 @@
                     <li> <a href="#">للبيع</a></li>
                 </ul>
             </nav>
-            <a href="../index.html" class="logo"><img src="images/logo.png" alt="Logo"></a>
+            <a href="../index.php" class="logo"><img src="images/logo.png" alt="Logo"></a>
         </div>
     </header>
     <!-- End Header -->
@@ -44,26 +43,31 @@
         <div class="back_img">
             <div class="form_content">
                 <p>مرحباً بكم في <br /><span><strong>الوسيط</strong></span></p>
-                <form action="" method="">
+                <form action="" method="POST" id="form">
                     <div class="input-box">
-                        <input id="email" type="email" dir="rtl" placeholder="البريد الالكتروني" required>
+                        <input id="email" name="email" type="email" dir="rtl" placeholder="البريد الالكتروني">
                         <i class='bx bxs-envelope'></i>
+                        <span class="error_message"></span>
+
                     </div>
                     <div class="input-box">
-                        <input id="password" type="password" dir="rtl" placeholder="كلمه المرور " required>
+                        <input id="password" name="password" type="password" dir="rtl" placeholder="كلمه المرور "
+                        >
+                        <i class='bx bx-lock-open'></i>
                         <i class='bx bx-show-alt ' id="eyeShowPassword"></i>
                         <i class='bx bx-hide ' id="eyeHidePassword"></i>
-                        <i class='bx bx-lock-open'></i>
+                        <span class="error_message"></span>
+
                     </div>
 
                     <div class="check-box">
                         <label dir="rtl" for="LoginForMonth">تسجيل الدخول لمده شهر</label>
-                        <input class="checkbox" id="LoginForMonth" type="checkbox">
+                        <input class="checkbox" name="loginForMonth" id="LoginForMonth" type="checkbox">
                     </div>
                     <div class="submit_btn">
-                        <button onclick="check()" class="btn2" type="submit">تسجيل الدخول</button>
+                        <button id="submit"  class="btn2" name="submit" type="submit">تسجيل الدخول</button>
                     </div>
-                    <a href="../registration/index.html">انشاء حساب جديد</a>
+                    <a href="../registration/index.php">انشاء حساب جديد</a>
                 </form>
             </div>
         </div>
