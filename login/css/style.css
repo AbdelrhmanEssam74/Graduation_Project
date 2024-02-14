@@ -7,8 +7,10 @@
     --color6: #446D6E;
     --color7: #F9F9F6;
     --hover: #2F6B6E;
-
-
+    --success: #00B73F;
+    --success-hover: #008b31;
+    --danger: #ff3860;
+    --danger-hover: #bb2443;
 }
 
 body {
@@ -129,6 +131,7 @@ header nav ul {
         background-color: rgb(0 0 0 /50%);
         color: #fff;
         text-align: right;
+        z-index: 10;
     }
 
     header nav .menu li:hover a {
@@ -161,15 +164,6 @@ header nav a:hover {
     border-bottom: 1px solid var(--color4);
 }
 
-/* .btn1 {
-    width: 100px;
-    height: 40px;
-    border-radius: 10px;
-    background-color: var(--color1);
-    color: white;
-    border: none;
-    cursor: pointer;
-} */
 
 /* End Header */
 /* Start Form  */
@@ -361,6 +355,43 @@ header nav a:hover {
     cursor: pointer;
     width: fit-content;
     display: none;
+}
+
+/* Error message */
+
+
+.error_message {
+    display: none;
+    position: absolute;
+    transition: 0.5s all;
+    font-size: 13px;
+    width: 50%;
+    text-align: center;
+    padding: 7px 5px;
+    border-radius: 10px;
+    background-color: var(--danger);
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+
+.error_message::before {
+    content: "";
+    position: absolute;
+    top: 85%;
+    right: 36%;
+    transform: translate(0%, 0%);
+    border-bottom: solid 10px transparent;
+    border-top: solid 10px var(--danger);
+    border-left: solid 10px transparent;
+    border-right: solid 10px transparent;
+}
+
+@media (max-width: 500px) {
+    .error_message {
+        font-size: 10px;
+        width: 50%;
+    }
 }
 
 /* End Form  */
