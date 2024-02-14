@@ -71,6 +71,11 @@ const validateInputs = () => {
     } else {
         setSuccess(password);
     }
+    if (passwordValue.length <5) {
+        setErrors(password, " كلمة السر اقل من 5 حروف")
+    } else {
+        setSuccess(password);
+    }
     if (ConfirmPasswordValue === "") {
         setErrors(confirmPassword, "ادخل كلمة السر")
     } else if (passwordValue !== ConfirmPasswordValue) {
