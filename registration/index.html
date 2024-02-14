@@ -34,7 +34,7 @@
                     <li> <a href="#" class="activeH">للبيع</a></li>
                 </ul>
             </nav>
-            <a href="../index.html" class="logo"><img src="images/logo.png" alt="Logo"></a>
+            <a href="../index.php" class="logo"><img src="images/logo.png" alt="Logo"></a>
         </div>
     </header>
     <!-- End Header -->
@@ -45,38 +45,48 @@
                 <p>مرحباً بكم في <br /><span><strong>الوسيط</strong></span></p>
                 <p class="info">قم بإنشاء حساب جديد للوصول الي خدمات الوسيط</p>
 
-                <form action="" method="">
+                <form action="" method="" id="form">
                     <div class="input-box-name">
                         <div class="first-name">
-                            <input class="name" id="firstName" type="text" dir="rtl" placeholder=" الأسم الأول"
-                                required>
+                            <input class="name" name="FName" id="firstName" type="text" dir="rtl"
+                                placeholder=" الأسم الأول">
                             <i class='bx bx-user'></i>
+                            <span class="error_message"></span>
                         </div>
                         <div class="last-name">
-                            <input class="name" id="lastName" type="text" dir="rtl" placeholder=" الأسم الأخير"
-                                required>
+                            <input class="name" id="lastName" name="LName" type="text" dir="rtl"
+                                placeholder=" الأسم الأخير">
                             <i class='bx bx-user'></i>
+                            <span class="error_message"></span>
                         </div>
                     </div>
 
 
                     <div class="input-box">
-                        <input id="email" type="email" dir="rtl" placeholder="البريد الالكتروني" required>
+                        <input id="email" type="email" name="email" dir="rtl" placeholder="البريد الالكتروني">
                         <i class='bx bxs-envelope'></i>
+                        <span class="error_message"></span>
                     </div>
                     <div class="input-box">
-                        <input id="password" type="password" dir="rtl" placeholder="كلمه المرور " required>
+                        <input id="password" type="password" name="password" dir="rtl" placeholder="كلمه المرور ">
+                        <i class='bx bx-lock-open'></i>
                         <i class='bx bx-show-alt eyeShowPassword' id="eyeShowPassword"></i>
                         <i class='bx bx-hide eyeHidePassword' id="eyeHidePassword"></i>
-                        <i class='bx bx-lock-open'></i>
+
+                        <span class="error_message"></span>
                     </div>
                     <div class="input-box">
-                        <input id="confirmPassword" type="password" dir="rtl" placeholder="تأكيد كلمه المرور" required>
+                        <input id="confirmPassword" type="password" name="confirmPassword" dir="rtl"
+                            placeholder="تأكيد كلمه المرور">
                         <i class='bx bx-lock-open'></i>
+                        <span class="error_message"></span>
+
                     </div>
                     <div class="input-box">
-                        <input type="tel" dir="rtl" id="phone" name="phone" placeholder="+20" required>
+                        <input type="tel" dir="rtl" id="phone" name="phone" placeholder="+20">
                         <i class='bx bx-phone-call'></i>
+                        <span class="error_message"></span>
+
                     </div>
                     <div class="Note">
                         <ul dir="rtl">
@@ -86,13 +96,10 @@
                             <i class='bx bxs-circle'></i>
                         </ul>
                     </div>
-
-
                     <div class="submit_btn">
-                        <button onclick="check()" class="btn2" type="submit">إنشاء
-                            حساب </button>
+                        <input value="إنشاء حساب" id="submit" class="BTN_submit" name="submit" type="submit">
                     </div>
-                    <a href="../login/index.html"> لدى حساب بالفعل </a>
+                    <a href="../login/index.php"> لدى حساب بالفعل </a>
                 </form>
             </div>
         </div>
@@ -101,7 +108,6 @@
 
     <!-- End Login Form -->
     <script src="js/main.js"></script>
-    <!-- <script src="register.js"></script> -->
 </body>
 
 </html>
