@@ -375,7 +375,6 @@ submit_btn.addEventListener("click", function () {
 
 
 
-heading.forEach((el) => observer.observe(el));
 
 // animate property body
 window.addEventListener("scroll", function () {
