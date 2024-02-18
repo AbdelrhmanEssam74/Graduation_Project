@@ -400,6 +400,12 @@ window.addEventListener("scroll", function () {
 
             if (bodyTop < windowHeight) {
                 body.classList.add("show");
+                body.classList.remove("hide");
+            }
+            else {
+                body.classList.remove("show");
+                body.classList.add("hide");
+
             }
         });
     }
