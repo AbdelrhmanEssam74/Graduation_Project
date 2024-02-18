@@ -15,6 +15,7 @@
     --danger: #ff3860;
     --danger-hover: #bb2443;
     --third-color: #777;
+    --transparent-color: rgb(15 116 143 /30%);
     --sectina-padding: 100px;
 
 }
@@ -113,7 +114,7 @@ html {
 header {
     left: 0;
     width: 100%;
-    height: 80px;
+    height: 96px;
     z-index: 2;
     transition: 0.3s;
     background-color: white;
@@ -124,6 +125,56 @@ header .container {
     justify-content: space-between;
     align-items: center;
     position: relative;
+}
+
+
+.toggle-checkbox {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+
+}
+
+.toggle-switch {
+    margin-right: 5px;
+    background-color: #ffffff;
+    width: 70px;
+    height: 30px;
+    border-radius: 16px;
+    position: relative;
+    transition: 0.3s;
+    cursor: pointer;
+    border: 1px solid rgb(53, 53, 53);
+
+}
+
+.toggle-switch::before {
+    position: absolute;
+    content: "\f185";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    background-color: #fff;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    top: 4px;
+    left: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6d5252;
+    transition: 0.3s;
+}
+
+.toggle-checkbox:checked+.toggle-switch {
+    background-color: #000;
+}
+
+.toggle-checkbox:checked+.toggle-switch::before {
+    content: "\f186";
+    left: 43px;
+    top: 2px;
+    color: var(--blue-color);
 }
 
 
@@ -879,8 +930,8 @@ form .search_inputs .submit_btn button svg {
 .widget-container .container .widgets {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-column-gap: 21px;
-    grid-row-gap: 30px;
+    grid-column-gap: 30px;
+    grid-row-gap: 40px;
 }
 
 .widgets .property-body {
@@ -896,6 +947,18 @@ form .search_inputs .submit_btn button svg {
 
 .widgets .property-body .images-details {
     position: relative;
+}
+
+.widgets .property-body::before {
+    content: " ";
+    width: 274px;
+    height: 274px;
+    background-color: var(--transparent-color);
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    transform: translate(-6%, -6%);
+
 }
 
 .property-body .images-details img {
@@ -1232,7 +1295,6 @@ form .search_inputs .submit_btn button svg {
     width: 100%;
     top: 0;
     left: 0;
-    background-color: #fff;
 }
 
 .stats .container {
@@ -1265,15 +1327,15 @@ form .search_inputs .submit_btn button svg {
     }
 }
 
-.stats .container .box i {
-    width: 40px;
-    height: 40px;
+.stats .container .box svg {
+    width: 25px;
+    height: 25px;
     display: flex;
-    background-color: black;
+    color: var(--color3);
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    margin: 0 auto 30%;
+    margin: 0 auto 10%;
 }
 
 .stats .container .box .number {
