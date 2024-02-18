@@ -1131,7 +1131,7 @@ form .search_inputs .submit_btn button svg {
 }
 
 /* animate property body */
-.property-body {
+.property-body.hide {
     opacity: 0;
     transform: translateY(100px);
     transition: opacity 1s, transform 1s;
