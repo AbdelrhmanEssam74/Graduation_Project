@@ -373,17 +373,7 @@ submit_btn.addEventListener("click", function () {
     }
 })
 
-//all h2 of sections
-const heading = document.querySelectorAll(".heading2");
-const observer = new IntersectionObserver((ens) => {
-    ens.forEach((en) => {
-        if (en.isIntersecting) {
-            en.target.classList.add("show");
-        } else {
-            en.target.classList.remove("show");
-        }
-    });
-});
+
 
 heading.forEach((el) => observer.observe(el));
 
