@@ -1117,18 +1117,7 @@ form .search_inputs .submit_btn button svg {
     color: var(--color4);
 }
 
-/*All heading scroll effect*/
-.heading2 {
-    opacity: 0;
-    transform: translateX(-100%);
-    transition: all 1s;
-}
 
-.show {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
-}
 
 /* animate property body */
 .property-body.hide {
