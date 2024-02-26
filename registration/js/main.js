@@ -71,7 +71,7 @@ const validateInputs = () => {
     } else {
         setSuccess(password);
     }
-    if (passwordValue.length <5) {
+    if (passwordValue.length < 5) {
         setErrors(password, " كلمة السر اقل من 5 حروف")
     } else {
         setSuccess(password);
@@ -133,8 +133,16 @@ const menuicon = document.querySelector(".toggle_menu");
 //menu
 const menu = document.getElementById("menu");
 menuicon.addEventListener("click", () => {
-    menu.classList.toggle("menu");
+    menu.classList.toggle("show_menu");
 });
+
+
+setTimeout(() => {
+    if (menu.classList.contains("show_menu")) {
+        menu.classList.remove("show_menu");
+    }
+
+}, 4000);
 
 
 var newmenu = document.getElementById("menu");

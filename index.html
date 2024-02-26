@@ -12,7 +12,7 @@
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Main External Css file -->
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" id="stylesheet" href="css/home.css">
     <!-- Reader all elements nomarlly -->
     <link rel="stylesheet" href="css/normalize.css" />
     <!-- Font awesome library -->
@@ -33,22 +33,19 @@
     <span class="up"><i class="fa-regular fa-circle-up"></i></span>
     <header>
         <div class="container">
-            <div class="login_menu">
-                <button class="btn1">الدخول</button>
-                <div class="menu_login">
-                    <p>تسجيل او إنشاء حساب جديد</p>
-                    <a href="login/index.html">تسجيل الدخول</a>
-                    <a href="registration/index.html">إنشاء حساب</a>
-                </div>
+            <div class="login">
+                <a class="LoginBtn" href="login/index.html">
+                    تسجيل الدخول
+                </a>
             </div>
             <nav class="navigation">
-                <i class="bx bx-menu toggle_menu black" id="menuicon"></i>
-                <ul id="menu">
+                <span id="menuicon"><i class="bx bx-menu toggle_menu black"></i></span>
+                <ul id="menu" class="menu">
                     <li><a href="#">تواصل معنا</a></li>
                     <li> <a href="#">عنا</a></li>
                     <li> <a href="#">تجاريه</a></li>
                     <li> <a href="#">للطلاب</a></li>
-                    <li> <a href="#">للإيجار</a></li>
+                    <li> <a href="عقارات_للإيجار.html">للإيجار</a></li>
                     <li> <a href="#" class="activeH">للبيع</a></li>
                 </ul>
             </nav>
@@ -196,7 +193,66 @@
                                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, quae.</p>
                             </div>
                             <div class="price">
-                                <p>3000 <span>جنيه</span></p>
+                                <p>3,000 <span>جنيه</span></p>
+                            </div>
+                            <hr>
+                            <div class="owner">
+                                <a href="">
+                                    <p> : المالك </p>
+                                    <span> ابراهيم عبد الرحمن</span>
+                                </a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="property-body">
+                    <a href="" class="property-link">
+                        <div class="images-details">
+                            <img src="images/item1.jpg" alt="">
+                            <div class="details-top">
+                                <div class="details-type">
+                                    <div class="type1">سكني</div>
+                                    <div class="buy">للبيع</div>
+                                </div>
+                                <div class="favorite-box">
+                                    <a href='#' title="اضف للمفضلة" class='property-favorite'>
+                                        <span class='icon-heart-o'>
+                                            <i class="fa-regular fa-heart"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="details-bottom">
+                                <div class="property-details">
+                                    <div class="bath">
+                                        <p>2</p>
+                                        <i class='bx bx-bath'></i>
+                                    </div>
+                                    <div class="rooms">
+                                        <p>4</p>
+                                        <i class='bx bx-bed'></i>
+                                    </div>
+                                    <div class="area">
+                                        <p>150 m<sup>2</sup> </p>
+                                        <i class='bx bx-layout'></i>
+                                    </div>
+                                </div>
+                                <div class="photos">
+                                    <p>5</p>
+                                    <i class="fa-solid fa-camera"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proparty-info">
+                            <div class="location">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p>location</p>
+                            </div>
+                            <div class="description">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, quae.</p>
+                            </div>
+                            <div class="price">
+                                <p>3,000,000 <span>جنيه</span></p>
                             </div>
                             <hr>
                             <div class="owner">
@@ -255,243 +311,7 @@
                                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, quae.</p>
                             </div>
                             <div class="price">
-                                <p>3000 <span>جنيه</span></p>
-                            </div>
-                            <hr>
-                            <div class="owner">
-                                <a href="">
-                                    <p> : المالك </p>
-                                    <span> ابراهيم عبد الرحمن</span>
-                                </a>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="property-body">
-                    <a href="" class="property-link">
-                        <div class="images-details">
-                            <img src="images/item1.jpg" alt="">
-                            <div class="details-top">
-                                <div class="details-type">
-                                    <div class="type1">سكني</div>
-                                    <div class="rent">للإيجار</div>
-                                </div>
-                                <div class="favorite-box">
-                                    <a href='#' title="اضف للمفضلة" class='property-favorite'>
-                                        <span class='icon-heart-o'>
-                                            <i class="fa-regular fa-heart"></i>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="details-bottom">
-                                <div class="property-details">
-                                    <div class="bath">
-                                        <p>2</p>
-                                        <i class='bx bx-bath'></i>
-                                    </div>
-                                    <div class="rooms">
-                                        <p>4</p>
-                                        <i class='bx bx-bed'></i>
-                                    </div>
-                                    <div class="area">
-                                        <p>200 m<sup>2</sup> </p>
-                                        <i class='bx bx-layout'></i>
-                                    </div>
-                                </div>
-                                <div class="photos">
-                                    <p>5</p>
-                                    <i class="fa-solid fa-camera"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="proparty-info">
-                            <div class="location">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <p>location</p>
-                            </div>
-                            <div class="description">
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, quae.</p>
-                            </div>
-                            <div class="price">
-                                <p>3000 <span>جنيه</span></p>
-                            </div>
-                            <hr>
-                            <div class="owner">
-                                <a href="">
-                                    <p> : المالك </p>
-                                    <span> ابراهيم عبد الرحمن</span>
-                                </a>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="property-body">
-                    <a href="" class="property-link">
-                        <div class="images-details">
-                            <img src="images/item1.jpg" alt="">
-                            <div class="details-top">
-                                <div class="details-type">
-                                    <div class="type1">سكني</div>
-                                    <div class="rent">للإيجار</div>
-                                </div>
-                                <div class="favorite-box">
-                                    <a href='#' title="اضف للمفضلة" class='property-favorite'>
-                                        <span class='icon-heart-o'>
-                                            <i class="fa-regular fa-heart"></i>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="details-bottom">
-                                <div class="property-details">
-                                    <div class="bath">
-                                        <p>2</p>
-                                        <i class='bx bx-bath'></i>
-                                    </div>
-                                    <div class="rooms">
-                                        <p>4</p>
-                                        <i class='bx bx-bed'></i>
-                                    </div>
-                                    <div class="area">
-                                        <p>200 m<sup>2</sup> </p>
-                                        <i class='bx bx-layout'></i>
-                                    </div>
-                                </div>
-                                <div class="photos">
-                                    <p>5</p>
-                                    <i class="fa-solid fa-camera"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="proparty-info">
-                            <div class="location">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <p>location</p>
-                            </div>
-                            <div class="description">
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, quae.</p>
-                            </div>
-                            <div class="price">
-                                <p>3000 <span>جنيه</span></p>
-                            </div>
-                            <hr>
-                            <div class="owner">
-                                <a href="">
-                                    <p> : المالك </p>
-                                    <span> ابراهيم عبد الرحمن</span>
-                                </a>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="property-body">
-                    <a href="" class="property-link">
-                        <div class="images-details">
-                            <img src="images/item1.jpg" alt="">
-                            <div class="details-top">
-                                <div class="details-type">
-                                    <div class="type1">سكني</div>
-                                    <div class="rent">للإيجار</div>
-                                </div>
-                                <div class="favorite-box">
-                                    <a href='#' title="اضف للمفضلة" class='property-favorite'>
-                                        <span class='icon-heart-o'>
-                                            <i class="fa-regular fa-heart"></i>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="details-bottom">
-                                <div class="property-details">
-                                    <div class="bath">
-                                        <p>2</p>
-                                        <i class='bx bx-bath'></i>
-                                    </div>
-                                    <div class="rooms">
-                                        <p>4</p>
-                                        <i class='bx bx-bed'></i>
-                                    </div>
-                                    <div class="area">
-                                        <p>200 m<sup>2</sup> </p>
-                                        <i class='bx bx-layout'></i>
-                                    </div>
-                                </div>
-                                <div class="photos">
-                                    <p>5</p>
-                                    <i class="fa-solid fa-camera"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="proparty-info">
-                            <div class="location">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <p>location</p>
-                            </div>
-                            <div class="description">
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, quae.</p>
-                            </div>
-                            <div class="price">
-                                <p>3000 <span>جنيه</span></p>
-                            </div>
-                            <hr>
-                            <div class="owner">
-                                <a href="">
-                                    <p> : المالك </p>
-                                    <span> ابراهيم عبد الرحمن</span>
-                                </a>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="property-body">
-                    <a href="" class="property-link">
-                        <div class="images-details">
-                            <img src="images/item1.jpg" alt="">
-                            <div class="details-top">
-                                <div class="details-type">
-                                    <div class="type1">سكني</div>
-                                    <div class="rent">للإيجار</div>
-                                </div>
-                                <div class="favorite-box">
-                                    <a href='#' title="اضف للمفضلة" class='property-favorite'>
-                                        <span class='icon-heart-o'>
-                                            <i class="fa-regular fa-heart"></i>
-                                        </span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="details-bottom">
-                                <div class="property-details">
-                                    <div class="bath">
-                                        <p>2</p>
-                                        <i class='bx bx-bath'></i>
-                                    </div>
-                                    <div class="rooms">
-                                        <p>4</p>
-                                        <i class='bx bx-bed'></i>
-                                    </div>
-                                    <div class="area">
-                                        <p>200 m<sup>2</sup> </p>
-                                        <i class='bx bx-layout'></i>
-                                    </div>
-                                </div>
-                                <div class="photos">
-                                    <p>5</p>
-                                    <i class="fa-solid fa-camera"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="proparty-info">
-                            <div class="location">
-                                <i class="fa-solid fa-location-dot"></i>
-                                <p>location</p>
-                            </div>
-                            <div class="description">
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, quae.</p>
-                            </div>
-                            <div class="price">
-                                <p>3000 <span>جنيه</span></p>
+                                <p>3,000 <span>جنيه</span></p>
                             </div>
                             <hr>
                             <div class="owner">
@@ -516,7 +336,7 @@
             <div class="design_content">
                 <p>قم بإنشاء حسابك ونشر العقارات الخاصة بك
                     للوصول لأكبر عدد من مستخدمي الوسيط</p>
-                <a href="login/index.html">
+                <a class="LoginBtn" href="login/index.html">
                     تسجيل الدخول
                 </a>
             </div>
@@ -524,26 +344,26 @@
     </div>
     <!-- End Design -->
     <!-- start stats -->
-    <div class="stats">
+    <div class="stats" id="stats-section">
         <div class="container">
             <div class="box">
                 <i class="fa-solid fa-building"></i>
-                <div class="number" data-goal="450">450</div>
+                <div class="number" data-goal="450">0</div>
                 <p>عقار للإيجار</p>
             </div>
             <div class="box">
                 <i class="fa-solid fa-building"></i>
-                <div class="number" data-goal="256">256</div>
+                <div class="number" data-goal="256">0</div>
                 <p>عقار للبيع</p>
             </div>
             <div class="box">
                 <i class="fa-solid fa-person"></i>
-                <div class="number" data-goal="210">210</div>
+                <div class="number" data-goal="210">0</div>
                 <p>عميل</p>
             </div>
             <div class="box">
                 <i class="fa-solid fa-eye"></i>
-                <div class="number" data-goal="17">+17k</div>
+                <div class="number" data-goal="600">0</div>
                 <p>زائر</p>
             </div>
         </div>

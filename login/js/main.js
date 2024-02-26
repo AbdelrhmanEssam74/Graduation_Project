@@ -90,12 +90,20 @@ const menuicon = document.querySelector(".toggle_menu");
 //menu
 const menu = document.getElementById("menu");
 menuicon.addEventListener("click", () => {
-    menu.classList.toggle("menu");
+    menu.classList.toggle("show_menu");
 });
 
 
-var newmenu = document.getElementById("menu");
-var newNav = `
+setTimeout(() => {
+    if (menu.classList.contains("show_menu")) {
+        menu.classList.remove("show_menu");
+    }
+
+}, 4000);
+
+
+const newmenu = document.getElementById("menu");
+const newNav = `
 <li> <a href="#">للبيع</a></li>
 <li> <a href="#">للإيجار</a></li>
 <li> <a href="#">للطلاب</a></li>
@@ -103,6 +111,7 @@ var newNav = `
 <li> <a href="#">عنا</a></li>
 <li><a href="#">تواصل معنا</a></li>
 `;
+
 // Check the width of the website on window resize
 window.addEventListener('resize', function () {
     var websiteWidth = window.innerWidth || document.documentElement.clientWidth;

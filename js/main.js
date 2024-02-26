@@ -4,18 +4,18 @@ const menuicon = document.querySelector(".toggle_menu");
 //menu
 const menu = document.getElementById("menu");
 menuicon.addEventListener("click", () => {
-    menu.classList.toggle("menu");
+    menu.classList.toggle("show_menu");
 });
 
 
 const newmenu = document.getElementById("menu");
 const newNav = `
-    <li> <a href="#">للبيع</a></li>
-    <li> <a href="#">للإيجار</a></li>
-    <li> <a href="#">للطلاب</a></li>
-    <li> <a href="#">تجاريه</a></li>
-    <li> <a href="#">عنا</a></li>
-    <li><a href="#">تواصل معنا</a></li>
+<li> <a href="#">للبيع</a></li>
+<li> <a href="عقارات_للإيجار.html">للإيجار</a></li>
+<li> <a href="#">للطلاب</a></li>
+<li> <a href="#">تجاريه</a></li>
+<li> <a href="#">عنا</a></li>
+<li><a href="#">تواصل معنا</a></li>
 `;
 
 const newSearchInputs = document.querySelector(".search_inputs");
@@ -43,7 +43,7 @@ function updateMenuAndSearchInputs() {
     <li> <a href="#">عنا</a></li>
     <li> <a href="#">تجاريه</a></li>
     <li> <a href="#">للطلاب</a></li>
-    <li> <a href="#">للإيجار</a></li>
+    <li> <a href="عقارات_للإيجار.html">للإيجار</a></li>
     <li> <a href="#">للبيع</a></li>
     `;
         newSearchInputs.innerHTML = `
@@ -378,6 +378,8 @@ submit_btn.addEventListener("click", function () {
 
 // animate property body
 window.addEventListener("scroll", function () {
+    let header = document.querySelector("header")
+    header.classList.toggle("sticky", window.scrollY);
     let propertyBodies = document.querySelectorAll(".property-body");
     let windowHeight = window.innerHeight;
     let windowWidth = window.innerWidth;
@@ -394,6 +396,7 @@ window.addEventListener("scroll", function () {
             else {
                 body.classList.remove("show");
                 body.classList.add("hide");
+
 
             }
         });
@@ -419,3 +422,48 @@ btn.onclick = function () {
         behavior: "smooth",
     });
 };
+
+let startBoxs = document.querySelectorAll(".stats .box .number")
+let statsSection = document.querySelector('.stats');
+let started = false; // function started ? no
+function startCounter(el) {
+    let goal = el.dataset.goal;
+    let counter = setInterval(() => {
+        el.textContent++;
+        if (el.textContent == goal) {
+            clearInterval(counter)
+        }
+    }, 2000/goal)
+}
+window.onscroll = function () {
+    if (window.scrollY >= statsSection.offsetTop - 350) {
+        if (!started) {
+            startBoxs.forEach(element => startCounter(element));
+        }
+        started = true;
+    }
+}
+
+//NOTE - dark mode
+/* const toggleCheckbox = document.querySelector('.toggle-checkbox');
+const stylesheet = document.getElementById('stylesheet');
+
+toggleCheckbox.addEventListener('change', () => {
+    if (toggleCheckbox.checked) {
+        stylesheet.href = 'css/homeDarkmode.css';
+        localStorage.setItem('darkMode', 'enabled');
+    } else {
+        stylesheet.href = 'css/home.css';
+        localStorage.setItem('darkMode', 'disabled');
+    }
+});
+
+// Apply user preference on page load
+const userPreference = localStorage.getItem('darkMode');
+if (userPreference === 'enabled') {
+    toggleCheckbox.checked = true;
+    stylesheet.href = 'css/homeDarkmode.css';
+} else {
+    toggleCheckbox.checked = false;
+    stylesheet.href = 'css/home.css';
+} */

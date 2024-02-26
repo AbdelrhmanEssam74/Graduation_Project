@@ -1,16 +1,24 @@
 :root {
-    --color1: #37797C;
-    --color2: #A25C32;
+    --darkbody: #000f13;
+    --footerbody: #363636;
+    --color1-dark: #0b343b;
+    --color2: #6b3514;
     --color3: #FF9A33;
     --color3hover: #e68a19;
+    --color4-dark: #003840;
     --color4: #00C0B7;
+    --color5: #A25C32;
     --color6: #446D6E;
     --color7: #F9F9F6;
     --color8: #04363e;
+    --color9-dark: #07272c;
     --color9: #2F6B6E;
     --hover: #2F6B6E;
+    --success: #00B73F;
+    --success-hover: #008b31;
     --danger: #ff3860;
-    --third-color: #777;
+    --danger-hover: #bb2443;
+    --third-color: #dbdbdb;
     --transparent-color: rgb(15 116 143 /30%);
     --sectina-padding: 100px;
 
@@ -48,7 +56,7 @@
 }
 
 body {
-    background-color: var(--color7);
+    background-color: var(--darkbody);
     font-family: "Cairo";
     height: 200vh;
 
@@ -103,67 +111,87 @@ html {
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
-    /* min-height: 97px; */
-}
-
-.LoginBtn {
-    margin-top: 15px;
-    padding: 10px 20px;
-    border-radius: 7px;
-    background-color: var(--color1);
-    transition: 0.5s all;
-    text-decoration: none;
-    color: #fff;
-    text-align: center;
-}
-
-.LoginBtn:hover {
-    background-color: var(--hover);
+    min-height: 97px;
 }
 
 /* Start Header */
-
 header {
+    left: 0;
     width: 100%;
-    height: 90px;
-    padding: 5px 15px;
-    z-index: 6;
-    transition: 0.5s all;
-    background-color: #fff;
+    height: 96px;
+    z-index: 2;
+    transition: 0.3s;
+    background-color: var(--color8);
 }
-
-header.sticky {
-
-    position: fixed;
-    z-index: 5;
-    -webkit-box-shadow: 0px 12px 15px -9px rgba(186, 196, 209, 1);
-    -moz-box-shadow: 0px 12px 15px -9px rgba(186, 196, 209, 1);
-    box-shadow: 0px 12px 15px -9px rgba(186, 196, 209, 1);
-
-}
-
-
 
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    border-radius: 15px;
-    height: 70px;
+}
+
+.toggle-checkbox {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
 
 }
 
-header .container .login .LoginBtn {
-    margin: 0;
-    padding: 5px 10px;
+.toggle-switch {
+    margin-right: 5px;
+    background-color: #ffffff;
+    width: 70px;
+    height: 30px;
+    border-radius: 16px;
+    position: relative;
+    transition: 0.3s;
+    cursor: pointer;
+    border: 1px solid rgb(53, 53, 53);
+
+}
+
+.toggle-switch::before {
+    position: absolute;
+    content: "\f185";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    background-color: #fff;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    top: 4px;
+    left: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6d5252;
+    transition: 0.3s;
+}
+
+.toggle-checkbox:checked+.toggle-switch {
+    background-color: #000;
+}
+
+.toggle-checkbox:checked+.toggle-switch::before {
+    content: "\f186";
+    left: 43px;
+    top: 2px;
+    color: var(--blue-color);
+}
+
+
+
+
+header .logo img {
+    height: 40px;
 }
 
 header nav {
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    flex: 1;
 }
 
 header nav .toggle_menu {
@@ -178,50 +206,10 @@ header nav .toggle_menu {
 }
 
 header nav ul {
-    margin-right: 15px;
-    display: flex;
-}
-
-ul a {
-    display: block;
-    color: var(--color1);
-    text-decoration: none;
-    font-size: 20px;
-    transition: 0.3s all;
-    padding: 23px 10px;
-    position: relative;
-    z-index: 2;
-}
-
-header nav a:hover {
-    color: var(--color4);
-    border-bottom: 1px solid var(--color4);
-}
-
-header .logo img {
-    height: 35px;
-}
-
-
-@media (min-width: 768px) {
-    header nav .toggle_menu {
-        display: none;
-    }
-}
-
-header nav ul {
     display: flex;
 }
 
 @media (max-width: 767px) {
-    header {
-        bottom: 0;
-    }
-
-    header .container {
-        background-color: #f5f5f5;
-    }
-
     header nav {
         display: flex;
         justify-content: space-between;
@@ -232,51 +220,116 @@ header nav ul {
     }
 
     header nav .menu {
-        margin: 0;
-        transition: 0.5s all;
         display: flex;
         flex-direction: column;
-        position: fixed;
-        right: -70%;
-        top: 0;
-        width: 50%;
-        background-color: #ffffff;
-        text-align: right;
-        z-index: 1;
-        user-select: none;
-        padding-right: 10px;
-        height: 85.5vh;
-        border-radius: 10px 0 0 10px;
-        -webkit-box-shadow: -61px 0px 125px -35px rgba(0, 0, 0, 0.62);
-        -moz-box-shadow: -61px 0px 125px -35px rgba(0, 0, 0, 0.62);
-        box-shadow: -61px 0px 125px -35px rgba(0, 0, 0, 0.62);
-    }
-
-    header nav .show_menu {
+        position: absolute;
+        top: 85%;
         right: 0;
-    }
-
-    header .container .login .LoginBtn {
-        display: none;
+        width: 100%;
+        background-color: rgb(0 0 0 /50%);
+        color: #fff;
+        text-align: right;
+        z-index: 6;
+        user-select: none;
     }
 
     header nav .menu li:hover a {
-        color: var(--color4);
+        color: rgb(255, 255, 255);
     }
 
     header ul li a {
-        color: #000000;
+        color: rgb(255, 255, 255);
     }
 
 
-    header nav ul li a:not(:first-child) {
+    header nav ul li a {
         padding: 15px !important;
     }
+}
 
+header nav ul a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    transition: 0.3s all;
+    padding: 30px 10px;
+    position: relative;
+    z-index: 2;
+}
+
+header nav a:hover {
+    color: var(--color4);
+    border-bottom: 1px solid var(--color4);
+}
+
+.btn1 {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--color4);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+
+.btn1:hover {
+    background-color: var(--hover);
+}
+
+.login_menu {
+    position: relative;
+}
+
+.menu_login {
+    display: none;
+    text-align: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #2c2c2c;
+    border: 1px solid #ccc;
+    width: 200px;
+    height: 200px;
+    padding: 30px 5px;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 6px 5px 11px -9px;
+    transition: 0.7s all;
+    z-index: 3;
+}
+
+.menu_login p {
+    margin: 10px 0;
+    color: #fff;
+}
+
+.menu_login a {
+    margin: 10px 15px;
+    border-radius: 10px;
+    background-color: var(--color4);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s all;
+    width: 70%;
+    padding: 7px 15px;
+    height: 35px;
+    text-decoration: none;
+}
+
+.menu_login a:hover {
+    background-color: var(--hover);
 
 }
 
+.login_menu:hover .menu_login {
+    display: flex;
 
+}
 
 /* End Header */
 /* Start Landing */
@@ -299,11 +352,10 @@ header nav ul {
     padding: 10px 20px;
     text-align: center;
     margin-bottom: 40px;
-    margin-top: 40px;
 }
 
 .langing .container .content h1 {
-    background-color: #fff;
+    background-color: var(--color8);
     padding: 15px 81px;
     color: var(--color3);
     border-radius: 15px;
@@ -315,7 +367,7 @@ header nav ul {
     line-height: 2;
     font-size: 60px;
     font-weight: 900;
-    color: #fff;
+    color: var(--color8);
     font-stretch: condensed;
 }
 
@@ -834,6 +886,7 @@ form .search_inputs .submit_btn button svg {
 
 /* Start widget  */
 .widget-container {
+    margin-top: 150px;
     padding-top: var(--sectina-padding);
     padding-bottom: var(--sectina-padding);
 }
@@ -855,6 +908,7 @@ form .search_inputs .submit_btn button svg {
     position: relative;
     margin-bottom: 70px;
     user-select: none;
+    color: #fff
 }
 
 .widget-container .container .main-heading h2::before {
@@ -864,7 +918,7 @@ form .search_inputs .submit_btn button svg {
     transform: translateX(-50%);
     bottom: -30px;
     height: 2px;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     width: 120px;
 }
 
@@ -883,8 +937,8 @@ form .search_inputs .submit_btn button svg {
 
 .widget-container .container .widgets {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-column-gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-column-gap: 40px;
     grid-row-gap: 40px;
 }
 
@@ -894,15 +948,26 @@ form .search_inputs .submit_btn button svg {
 
 .widgets .property-body:hover {
     margin-top: 2.5px;
-    -webkit-box-shadow: -1px 9px 5px 0px rgba(128, 128, 128, 1);
-    -moz-box-shadow: -1px 9px 5px 0px rgba(128, 128, 128, 1);
-    box-shadow: -1px 9px 5px 0px rgba(128, 128, 128, 1);
+    -webkit-box-shadow: 0px 0px 83px -31px rgba(138, 138, 138, 1);
+    -moz-box-shadow: 0px 0px 83px -31px rgba(138, 138, 138, 1);
+    box-shadow: 0px 0px 83px -31px rgba(138, 138, 138, 1);
 }
 
 .widgets .property-body .images-details {
     position: relative;
 }
 
+.widgets .property-body::before {
+    content: " ";
+    width: 274px;
+    height: 274px;
+    background-color: var(--transparent-color);
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    transform: translate(-6%, -6%);
+
+}
 
 .property-body .images-details img {
     width: 100%;
@@ -929,9 +994,10 @@ form .search_inputs .submit_btn button svg {
     width: 90px;
     color: #000000;
     text-align: center;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
     padding: 5px 0px;
     border-radius: 7px;
+    color: #fff;
 }
 
 .widgets .property-body .images-details .details-top .details-type .buy {
@@ -947,7 +1013,7 @@ form .search_inputs .submit_btn button svg {
     width: 90px;
     color: #ffffff;
     text-align: center;
-    background-color: var(--color4);
+    background-color: var(--color4-dark);
     padding: 5px 0px;
     border-radius: 7px;
 }
@@ -1013,7 +1079,7 @@ form .search_inputs .submit_btn button svg {
     text-align: center;
     border-radius: 10px;
     color: #fff;
-    background-color: var(--color9);
+    background-color: var(--color9-dark);
 }
 
 .widgets .property-body .images-details .details-bottom .property-details .rooms,
@@ -1036,7 +1102,7 @@ form .search_inputs .submit_btn button svg {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    background-color: var(--color9);
+    background-color: var(--color9-dark);
     height: 30px;
     color: #fff;
     border-radius: 10px;
@@ -1050,7 +1116,8 @@ form .search_inputs .submit_btn button svg {
     text-align: right;
     align-items: end;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: var(--footerbody);
+    color: #fff;
 
 }
 
@@ -1068,7 +1135,7 @@ form .search_inputs .submit_btn button svg {
 }
 
 .widgets .property-body .proparty-info .location svg {
-    color: var(--color9);
+    color: #fff;
 }
 
 .widgets .property-body .proparty-info .description {
@@ -1088,7 +1155,7 @@ form .search_inputs .submit_btn button svg {
 
 .widgets .property-body .proparty-info .price p {
     font-size: 25px;
-    color: var(--color9);
+    color: #fff;
     display: flex;
     gap: 10px;
     flex-direction: row-reverse;
@@ -1107,14 +1174,14 @@ form .search_inputs .submit_btn button svg {
 }
 
 .widgets .property-body .proparty-info .owner p {
-    color: var(--color9);
+    color: #fff;
     font-size: 20px;
     margin-left: 10px;
 }
 
 .widgets .property-body .proparty-info .owner a span {
     text-decoration: none;
-    color: var(--color8);
+    color: #fff;
     font-size: 20px;
     transition: 0.2s all;
 }
@@ -1128,22 +1195,23 @@ form .search_inputs .submit_btn button svg {
 /* animate property body */
 .property-body.hide {
     opacity: 0;
-    transform: translateX(150px);
+    transform: translateY(100px);
     transition: opacity 1s, transform 1s;
 }
 
 .property-body.show {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
 
 }
 
 /* ُEnd widget  */
 /* Start design  */
 .design {
+    margin-top: 150px;
     padding-top: 30px;
     padding-bottom: 30px;
-    background-color: #fff;
+    background-color: #1c1c1c;
 }
 
 .design .container {
@@ -1176,12 +1244,26 @@ form .search_inputs .submit_btn button svg {
     font-size: 35px;
     line-height: 1.8;
     font-weight: 600;
+    color: #fff;
 }
 
 
 
 
+.design .container .design_content a {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border-radius: 7px;
+    background-color: var(--color1-dark);
+    transition: 0.5s all;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+}
 
+.design .container .design_content a:hover {
+    background-color: var(--hover);
+}
 
 @media (max-width: 765px) {
     .design .container {
@@ -1218,6 +1300,16 @@ form .search_inputs .submit_btn button svg {
     position: relative;
 }
 
+.stats::before {
+    position: absolute;
+    content: " ";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+}
+
 .stats .container {
     position: relative;
     display: flex;
@@ -1226,8 +1318,7 @@ form .search_inputs .submit_btn button svg {
 
 .stats .container .box {
     color: var(--color8);
-    padding: 25px;
-    background-color: #fff;
+    padding: 30px;
 }
 
 @media (max-width:767px) {
@@ -1260,12 +1351,14 @@ form .search_inputs .submit_btn button svg {
 }
 
 .stats .container .box .number {
-    font-size: 37px;
+    font-size: 50px;
     font-weight: bold;
     margin: 0 0 20px;
+    color: #fff;
 }
 
 .stats .container .box p {
+    color: #fff;
     font-size: 30px;
 }
 
@@ -1290,7 +1383,7 @@ form .search_inputs .submit_btn button svg {
 }
 
 .footer {
-    background-color: #414141;
+    background-color: var(--footerbody);
     padding: 70px 0;
 }
 
@@ -1340,7 +1433,7 @@ form .search_inputs .submit_btn button svg {
     display: inline-block;
     height: 40px;
     width: 40px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     margin: 0 10px 10px 0;
     text-align: center;
     line-height: 40px;
