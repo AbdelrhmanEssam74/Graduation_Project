@@ -960,6 +960,15 @@ form .search_inputs .submit_btn button svg {
     border-radius: 7px;
 }
 
+.widgets .property-body .images-details .details-top .details-type .buy {
+    width: 90px;
+    color: #ffffff;
+    text-align: center;
+    background-color: var(--color2);
+    padding: 5px 0px;
+    border-radius: 7px;
+}
+
 .widgets .property-body .images-details .details-top .favorite-box {
     border-radius: 50%;
     padding: 10px;
