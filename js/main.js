@@ -10,7 +10,7 @@ menuicon.addEventListener("click", () => {
 
 const newmenu = document.getElementById("menu");
 const newNav = `
-<li> <a href="#">للبيع</a></li>
+<li> <a href="عقارات_للبيع.html">للبيع</a></li>
 <li> <a href="عقارات_للإيجار.html">للإيجار</a></li>
 <li> <a href="#">للطلاب</a></li>
 <li> <a href="#">تجاريه</a></li>
@@ -44,7 +44,7 @@ function updateMenuAndSearchInputs() {
     <li> <a href="#">تجاريه</a></li>
     <li> <a href="#">للطلاب</a></li>
     <li> <a href="عقارات_للإيجار.html">للإيجار</a></li>
-    <li> <a href="#">للبيع</a></li>
+    <li> <a href="عقارات_للبيع.html">للبيع</a></li>
     `;
         newSearchInputs.innerHTML = `
     <div class="input_control_search">
