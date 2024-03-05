@@ -1,0 +1,507 @@
+.images {
+    width: 100%;
+    height: 650px;
+    background-color: #fff;
+}
+
+.d-block {
+    height: 450px;
+    margin-top: 50px;
+}
+
+.list-of-images {
+    display: flex;
+    height: 100px;
+    width: 85%;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+.list-of-images img {
+    margin-left: 10px;
+    width: 300px;
+}
+
+@media (max-width: 767px) {
+    .list-of-images {
+        display: none;
+    }
+}
+
+/*end images*/
+
+
+/*start boxes */
+.parent {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    width: 85%;
+    height: 200vh;
+
+    margin-left: 100px;
+    margin-top: 30px;
+}
+
+/* start left boxes */
+.parent .left-boxes {
+    margin-top: 20px;
+
+
+}
+
+.parent .left-boxes .description-box {
+    width: 600px;
+
+    height: 150px;
+    background-color: #fff;
+    border-radius: 6px;
+    margin-left: 30px;
+    justify-content: space-between;
+}
+
+.parent .left-boxes .description-box .text {
+    display: flex;
+    margin-left: 430px;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+
+}
+
+.parent .left-boxes .description-box .text p {
+    width: 70px;
+    height: 30px;
+    background-color: var(--color7);
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.parent .left-boxes .description-box .text p:hover {
+    background-color: var(--color4);
+    color: black;
+}
+
+.parent .left-boxes .description-box .icons {
+    margin-top: -44px;
+    margin-left: 10px;
+    display: flex;
+
+}
+
+.parent .left-boxes .description-box .icons .property-favorite {
+    border-radius: 50%;
+    padding: 10px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    background-color: var(--color7);
+    transition: 0.5s all;
+    cursor: pointer;
+    color: var(--color9);
+
+}
+
+.parent .left-boxes .description-box .icons .property-favorite:hover {
+    background-color: var(--danger);
+
+}
+
+.parent .left-boxes .description-box .header {
+    font-size: large;
+    font-weight: bold;
+    color: var(--color1);
+    margin-top: 10px;
+    margin-left: 520px;
+}
+
+.parent .left-boxes .description-box .description {
+    margin-left: 320px;
+    color: var(--color9);
+}
+
+
+
+.parent .left-boxes .property-details {
+    height: 250px;
+    width: 600px;
+    margin-left: 30px;
+    background-color: #fff;
+    margin-top: 10px;
+    border-radius: 6px;
+}
+
+.parent .left-boxes .property-details p {
+    padding-top: 15px;
+    margin-left: 470px;
+    font-size: larger;
+    color: var(--color9);
+}
+
+.parent .left-boxes .property-details .first-row {
+    display: flex;
+    margin-top: 10px;
+}
+
+.parent .left-boxes .property-details .first-row .first-item {
+    display: flex;
+
+}
+
+.parent .left-boxes .property-details .first-row .first-item p {
+    font-weight: 300;
+}
+
+.parent .left-boxes .property-details .first-row .first-item p span {
+    font-weight: 600;
+}
+
+.parent .left-boxes .property-details .first-row .first-item i {
+    margin-left: 10px;
+    margin-top: 25px;
+
+}
+
+.parent .left-boxes .location {
+    width: 600px;
+
+    height: 200px;
+    background-color: #fff;
+    border-radius: 6px;
+    margin-left: 33px;
+    margin-top: 15px;
+}
+
+.parent .left-boxes .location p {
+    padding-top: 10px;
+    margin-left: 490px;
+    font-size: x-large;
+    color: var(--color9);
+    font-weight: 900;
+}
+
+.parent .left-boxes .comments {
+    width: 600px;
+
+    height: 270px;
+    background-color: #fff;
+    border-radius: 6px;
+    margin-left: 33px;
+    margin-top: 10px;
+
+}
+
+.parent .left-boxes .comments p {
+    padding-top: 10px;
+    margin-left: 490px;
+    font-size: large;
+    color: var(--color9);
+    font-weight: 700;
+}
+
+.parent .left-boxes .comments .person-comment {
+    display: block;
+    width: 80%;
+    height: 100px;
+    direction: rtl;
+    margin-top: 5px;
+}
+
+.parent .left-boxes .comments .person-comment img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    margin-right: -90px;
+    margin-left: 490px;
+    margin-top: 20px;
+
+
+}
+
+.parent .left-boxes .comments .person-comment .details-top {
+    display: flex;
+    margin-left: 50px;
+
+}
+
+.parent .left-boxes .comments .person-comment .details-top p {
+    margin-right: 10px;
+    margin-top: -80px;
+    margin-left: 10px;
+}
+
+.parent .left-boxes .comments .person-comment .details-top .icons {
+    display: flex;
+    margin-top: -70px;
+}
+
+.parent .left-boxes .comments .person-comment .text p {
+    margin-right: -9px;
+    margin-left: 60px;
+    margin-top: -50px;
+    font-size: small;
+}
+
+.parent .left-boxes .write-comment {
+    width: 600px;
+    height: 400px;
+    margin-left: 33px;
+    margin-top: 10px;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.parent .left-boxes .write-comment p {
+    padding-top: 10px;
+    margin-left: 460px;
+    font-size: x-large;
+    color: var(--color9);
+    font-weight: 700;
+}
+
+.parent .left-boxes .write-comment .rating {
+    display: flex;
+    margin-top: 10px;
+    direction: rtl;
+
+}
+
+.parent .left-boxes .write-comment .rating p {
+    margin-top: -15px;
+    margin-right: 22px;
+    font-weight: 400;
+    font-size: medium;
+
+}
+
+.parent .left-boxes .write-comment .rating .icons {
+    display: flex;
+    margin-right: -450px;
+    margin-top: -4px;
+
+}
+
+.parent .left-boxes .write-comment .rating .icons a i:hover {
+    color: #000;
+}
+
+.parent .left-boxes .write-comment form input {
+    display: block;
+    padding-top: 10px;
+    width: 80%;
+    margin-left: 45px;
+    margin-top: 10px;
+    background-color: var(--color7);
+    padding-right: 20px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.parent .left-boxes .write-comment form .comment {
+    height: 100px;
+    padding-bottom: 70px;
+}
+
+.parent .left-boxes .write-comment form button {
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: var(--color1);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s all;
+    margin-top: 10px;
+    margin-left: 360px;
+}
+
+/* end left boxes */
+/* start right boxes */
+.parent .right-boxes {
+    margin-top: 20px;
+    margin-left: -30px;
+
+
+}
+
+.parent .right-boxes .profile-box {
+    height: 280px;
+    background-color: #fff;
+    border-radius: 6px;
+    margin-top: -10px;
+}
+
+.parent .right-boxes .profile-box .header {
+    color: var(--color9);
+    margin-top: 10px;
+    margin-left: 340px;
+    font-weight: 700;
+}
+
+.parent .right-boxes .profile-box img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 320px;
+}
+
+.parent .right-boxes .profile-box .name {
+    margin-left: 180px;
+    margin-top: -50px;
+}
+
+.parent .right-boxes .profile-box .num {
+    margin-left: 230px;
+    margin-top: -15px;
+    color: var(--color6);
+}
+
+.parent .right-boxes .profile-box hr {
+    width: 100%;
+    margin-top: 90px;
+}
+
+/*.parent .right-boxes .profile-box .icons  {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   text-align: center;
+   width: 80%;
+}
+.parent .right-boxes .profile-box .icons .whatsapp,
+.parent .right-boxes .profile-box .icons .email,
+.parent .right-boxes .profile-box .icons .call
+ {
+    display: flex;
+    margin-top: 10px;
+    background-color: var(--color9);
+    width: 60px;
+    height: 50px;
+    
+}*/
+
+.parent .right-boxes .profile-box .link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+
+}
+
+.parent .right-boxes .profile-box .link i {
+    margin-left: 5px;
+}
+
+.parent .right-boxes .profile-box .link .second-link {
+    margin-top: 15px;
+}
+
+.parent .right-boxes .special-show {
+
+    height: 370px;
+
+    margin-top: 20px;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.parent .right-boxes .special-show p {
+    padding-top: 10px;
+    margin-left: 80px;
+    font-size: large;
+    color: var(--color9);
+    font-weight: 700;
+}
+
+.parent .right-boxes .special-show form input {
+    display: block;
+    padding-top: 10px;
+    width: 80%;
+    margin-left: 50px;
+    margin-top: 10px;
+    background-color: var(--color7);
+    padding-right: 20px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.parent .right-boxes .special-show form .comment {
+    height: 130px;
+    padding-bottom: 100px;
+}
+
+.parent .right-boxes .special-show form button {
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: var(--color1);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s all;
+    margin-top: 20px;
+    margin-left: 200px;
+}
+
+.parent .right-boxes .last-box {
+    height: 500px;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 6px;
+}
+
+.parent .right-boxes .last-box p {
+
+    margin-left: 140px;
+    padding-top: 15px;
+    font-weight: 600;
+    font-size: large;
+    color: var(--color6);
+}
+
+.parent .right-boxes .last-box .box {
+    width: 100%;
+    height: 100px;
+
+    margin-top: 20px;
+}
+
+.parent .right-boxes .last-box .box img {
+    width: 100px;
+    height: 100px;
+    border-radius: 6px;
+    margin-left: 270px;
+
+}
+
+.parent .right-boxes .last-box .box p {
+    margin-top: -110px;
+    margin-left: 160px;
+}
+
+.parent .right-boxes .last-box .box .price {
+    margin-top: -30px;
+    margin-left: 200px;
+    font-weight: 400;
+}
+
+/*end right boxes*/
+@media (max-width: 767px) {
+    .parent {
+        display: block;
+
+
+
+    }
+
+    .parent .right-boxes .profile-box,
+    .parent .right-boxes .last-box {
+        width: 400px;
+        margin-left: 100px;
+    }
+}

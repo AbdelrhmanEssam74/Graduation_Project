@@ -8,15 +8,6 @@ menuicon.addEventListener("click", () => {
 });
 
 
-const newmenu = document.getElementById("menu");
-const newNav = `
-<li> <a href="عقارات_للبيع.html">للبيع</a></li>
-<li> <a href="عقارات_للإيجار.html">للإيجار</a></li>
-<li> <a href="#">للطلاب</a></li>
-<li> <a href="#">تجاريه</a></li>
-<li> <a href="#">عنا</a></li>
-<li><a href="#">تواصل معنا</a></li>
-`;
 
 const newSearchInputs = document.querySelector(".search_inputs");
 const newInputs = `
@@ -35,17 +26,8 @@ function updateMenuAndSearchInputs() {
     const websiteWidth = window.innerWidth || document.documentElement.clientWidth;
 
     if (websiteWidth <= 767) {
-        newmenu.innerHTML = newNav;
         newSearchInputs.innerHTML = newInputs;
     } else {
-        newmenu.innerHTML = `                    
-    <li><a href="#">تواصل معنا</a></li>
-    <li> <a href="#">عنا</a></li>
-    <li> <a href="#">تجاريه</a></li>
-    <li> <a href="#">للطلاب</a></li>
-    <li> <a href="عقارات_للإيجار.html">للإيجار</a></li>
-    <li> <a href="عقارات_للبيع.html">للبيع</a></li>
-    `;
         newSearchInputs.innerHTML = `
     <div class="input_control_search">
         <input type="text" name="q" required oninput="showSuggestions()" id="searchInput" placeholder="الحي او المنطقة">
@@ -182,196 +164,198 @@ let radio_rent = document.querySelector("#rent")
 let minPriceInput = document.querySelector("#minPriceInput");
 let maxPriceInput = document.querySelector("#maxPriceInput");
 let price_text = document.querySelector(".price_text");
+if (minPriceInput) {
+    minPriceInput.addEventListener("click", function () {
+        const suggestion_min_price_list = document.querySelector(".suggestion_min_price");
+        suggestion_min_price_list.innerHTML = ""; // Clear previous suggestions
 
+        let suggestion = [];
+        if (radio_buy.checked) {
+            suggestion = suggestions_price_buy;
+        } else {
+            suggestion = suggestions_price_rent;
+        }
 
-minPriceInput.addEventListener("click", function () {
-    const suggestion_min_price_list = document.querySelector(".suggestion_min_price");
-    suggestion_min_price_list.innerHTML = ""; // Clear previous suggestions
-
-    let suggestion = [];
-    if (radio_buy.checked) {
-        suggestion = suggestions_price_buy;
-    } else {
-        suggestion = suggestions_price_rent;
-    }
-
-    suggestion.forEach(e => {
-        const li = document.createElement("li")
-        li.textContent = e;
-        li.addEventListener("click", function () {
-            minPriceInput.value = e
-            suggestion_min_price_list.innerHTML = "";
-            updatePriceText();
-        })
-        suggestion_min_price_list.appendChild(li);
-    })
-})
-
-maxPriceInput.addEventListener("click", function () {
-    const suggestion_max_price_list = document.querySelector(".suggestion_max_price");
-    suggestion_max_price_list.innerHTML = ""; // Clear previous suggestions
-
-    let suggestion = [];
-    if (radio_buy.checked) {
-        suggestion = suggestions_price_buy;
-    } else {
-        suggestion = suggestions_price_rent;
-    }
-
-    const minValue = minPriceInput.value;
-    let upadated_list = [];
-    if (minValue) {
         suggestion.forEach(e => {
-            if (e > minValue) {
-                upadated_list.push(e)
-            }
+            const li = document.createElement("li")
+            li.textContent = e;
+            li.addEventListener("click", function () {
+                minPriceInput.value = e
+                suggestion_min_price_list.innerHTML = "";
+                updatePriceText();
+            })
+            suggestion_min_price_list.appendChild(li);
         })
+    })
+
+    maxPriceInput.addEventListener("click", function () {
+        const suggestion_max_price_list = document.querySelector(".suggestion_max_price");
+        suggestion_max_price_list.innerHTML = ""; // Clear previous suggestions
+
+        let suggestion = [];
+        if (radio_buy.checked) {
+            suggestion = suggestions_price_buy;
+        } else {
+            suggestion = suggestions_price_rent;
+        }
+
+        const minValue = minPriceInput.value;
+        let upadated_list = [];
+        if (minValue) {
+            suggestion.forEach(e => {
+                if (e > minValue) {
+                    upadated_list.push(e)
+                }
+            })
+        }
+        upadated_list.forEach(e => {
+            const li = document.createElement("li")
+            li.textContent = e;
+            li.addEventListener("click", function () {
+                maxPriceInput.value = e
+                suggestion_max_price_list.innerHTML = "";
+                updatePriceText();
+            })
+            suggestion_max_price_list.appendChild(li);
+        })
+    })
+
+    function updatePriceText() {
+        price_text.textContent = "من " + minPriceInput.value + " إلى " + maxPriceInput.value;
     }
-    upadated_list.forEach(e => {
-        const li = document.createElement("li")
-        li.textContent = e;
-        li.addEventListener("click", function () {
-            maxPriceInput.value = e
-            suggestion_max_price_list.innerHTML = "";
-            updatePriceText();
-        })
-        suggestion_max_price_list.appendChild(li);
+
+    let rest_price_input = document.querySelector(".rest_price_input");
+    rest_price_input.addEventListener("click", function () {
+        minPriceInput.value = ""
+        maxPriceInput.value = ""
+        price_text.textContent = "السعر"
     })
-})
-
-function updatePriceText() {
-    price_text.textContent = "من " + minPriceInput.value + " إلى " + maxPriceInput.value;
-}
-
-let rest_price_input = document.querySelector(".rest_price_input");
-rest_price_input.addEventListener("click", function () {
-    minPriceInput.value = ""
-    maxPriceInput.value = ""
-    price_text.textContent = "السعر"
-})
 
 
 
-//SECTION - suggestions list for area
+    //SECTION - suggestions list for area
 
-const suggestions_min_area = [
-    50,
-    60,
-    70,
-    80,
-    100
-];
+    const suggestions_min_area = [
+        50,
+        60,
+        70,
+        80,
+        100
+    ];
 
-const suggestions_max_area = [
-    50,
-    60,
-    70,
-    80,
-    100
-];
-
-
-let minAreaInput = document.querySelector("#minAreaInput");
-let maxAreaInput = document.querySelector("#maxAreaInput");
-let area_text = document.querySelector(".area_text");
+    const suggestions_max_area = [
+        50,
+        60,
+        70,
+        80,
+        100
+    ];
 
 
-minAreaInput.addEventListener("click", function () {
-    const suggestion_min_area_list = document.querySelector(".suggestion_min_area");
-    suggestion_min_area_list.innerHTML = ""; // Clear previous suggestions
-
-    suggestions_min_area.forEach(e => {
-        const li = document.createElement("li")
-        li.textContent = "m " + e;
-        li.addEventListener("click", function () {
-            minAreaInput.value = e
-            suggestion_min_area_list.innerHTML = "";
-            updateAreaText();
-        })
-        suggestion_min_area_list.appendChild(li);
-    })
-})
-
-maxAreaInput.addEventListener("click", function () {
-    const suggestion_max_area_list = document.querySelector(".suggestion_max_area");
-    suggestion_max_area_list.innerHTML = ""; // Clear previous suggestions
+    let minAreaInput = document.querySelector("#minAreaInput");
+    let maxAreaInput = document.querySelector("#maxAreaInput");
+    let area_text = document.querySelector(".area_text");
 
 
-    const minValue = minAreaInput.value;
-    let upadated_list = [];
-    if (minValue) {
+    minAreaInput.addEventListener("click", function () {
+        const suggestion_min_area_list = document.querySelector(".suggestion_min_area");
+        suggestion_min_area_list.innerHTML = ""; // Clear previous suggestions
+
         suggestions_min_area.forEach(e => {
-            if (e > minValue) {
-                upadated_list.push(e)
-            }
+            const li = document.createElement("li")
+            li.textContent = "m " + e;
+            li.addEventListener("click", function () {
+                minAreaInput.value = e
+                suggestion_min_area_list.innerHTML = "";
+                updateAreaText();
+            })
+            suggestion_min_area_list.appendChild(li);
         })
-    }
-    upadated_list.forEach(e => {
-        const li = document.createElement("li")
-        li.textContent = "m " + e;
-        li.addEventListener("click", function () {
-            maxAreaInput.value = e
-            suggestion_max_area_list.innerHTML = "";
-            updateAreaText();
-        })
-        suggestion_max_area_list.appendChild(li);
     })
-})
 
-function updateAreaText() {
-    area_text.textContent = "من " + minAreaInput.value + " إلى " + maxAreaInput.value;
+    maxAreaInput.addEventListener("click", function () {
+        const suggestion_max_area_list = document.querySelector(".suggestion_max_area");
+        suggestion_max_area_list.innerHTML = ""; // Clear previous suggestions
+
+
+        const minValue = minAreaInput.value;
+        let upadated_list = [];
+        if (minValue) {
+            suggestions_min_area.forEach(e => {
+                if (e > minValue) {
+                    upadated_list.push(e)
+                }
+            })
+        }
+        upadated_list.forEach(e => {
+            const li = document.createElement("li")
+            li.textContent = "m " + e;
+            li.addEventListener("click", function () {
+                maxAreaInput.value = e
+                suggestion_max_area_list.innerHTML = "";
+                updateAreaText();
+            })
+            suggestion_max_area_list.appendChild(li);
+        })
+    })
+
+    function updateAreaText() {
+        area_text.textContent = "من " + minAreaInput.value + " إلى " + maxAreaInput.value;
+    }
+
+    let rest_area_input = document.querySelector(".rest_area_input");
+    rest_area_input.addEventListener("click", function () {
+        minAreaInput.value = ""
+        maxAreaInput.value = ""
+        area_text.innerHTML = "المساحه <span>(متر مربع)</span>"
+    })
+
+    //!SECTION display price inputs
+
+    let AreaInputSelector = document.querySelector(".select_area p")
+    let AreaInput_container = document.querySelector(".area_input")
+    let priceInputSelector = document.querySelector(".select_price p")
+    let priceInput_container = document.querySelector(".price_input")
+
+
+    priceInputSelector.addEventListener("click", function () {
+        if (priceInput_container.classList.contains("show_price_list")) {
+            priceInput_container.classList.remove("show_price_list")
+        } else {
+            priceInput_container.classList.add("show_price_list")
+        }
+        if (AreaInput_container.classList.contains("show_area_list")) {
+            AreaInput_container.classList.remove("show_area_list")
+        }
+    })
+
+
+    //SECTION display price inputs
+
+
+    AreaInputSelector.addEventListener("click", function () {
+        if (AreaInput_container.classList.contains("show_area_list")) {
+            AreaInput_container.classList.remove("show_area_list")
+        } else {
+            AreaInput_container.classList.add("show_area_list")
+        }
+        if (priceInput_container.classList.contains("show_price_list")) {
+            priceInput_container.classList.remove("show_price_list")
+        }
+    })
+
+    let submit_btn = document.querySelector(".submit_btn");
+    submit_btn.addEventListener("click", function () {
+        if (AreaInput_container.classList.contains("show_area_list")) {
+            AreaInput_container.classList.remove("show_area_list")
+        }
+        if (priceInput_container.classList.contains("show_price_list")) {
+            priceInput_container.classList.remove("show_price_list")
+        }
+    })
+
 }
 
-let rest_area_input = document.querySelector(".rest_area_input");
-rest_area_input.addEventListener("click", function () {
-    minAreaInput.value = ""
-    maxAreaInput.value = ""
-    area_text.innerHTML = "المساحه <span>(متر مربع)</span>"
-})
-
-//!SECTION display price inputs
-
-let AreaInputSelector = document.querySelector(".select_area p")
-let AreaInput_container = document.querySelector(".area_input")
-let priceInputSelector = document.querySelector(".select_price p")
-let priceInput_container = document.querySelector(".price_input")
-
-
-priceInputSelector.addEventListener("click", function () {
-    if (priceInput_container.classList.contains("show_price_list")) {
-        priceInput_container.classList.remove("show_price_list")
-    } else {
-        priceInput_container.classList.add("show_price_list")
-    }
-    if (AreaInput_container.classList.contains("show_area_list")) {
-        AreaInput_container.classList.remove("show_area_list")
-    }
-})
-
-
-//SECTION display price inputs
-
-
-AreaInputSelector.addEventListener("click", function () {
-    if (AreaInput_container.classList.contains("show_area_list")) {
-        AreaInput_container.classList.remove("show_area_list")
-    } else {
-        AreaInput_container.classList.add("show_area_list")
-    }
-    if (priceInput_container.classList.contains("show_price_list")) {
-        priceInput_container.classList.remove("show_price_list")
-    }
-})
-
-let submit_btn = document.querySelector(".submit_btn");
-submit_btn.addEventListener("click", function () {
-    if (AreaInput_container.classList.contains("show_area_list")) {
-        AreaInput_container.classList.remove("show_area_list")
-    }
-    if (priceInput_container.classList.contains("show_price_list")) {
-        priceInput_container.classList.remove("show_price_list")
-    }
-})
 
 
 
@@ -433,16 +417,19 @@ function startCounter(el) {
         if (el.textContent == goal) {
             clearInterval(counter)
         }
-    }, 2000/goal)
+    }, 2000 / goal)
 }
-window.onscroll = function () {
-    if (window.scrollY >= statsSection.offsetTop - 350) {
-        if (!started) {
-            startBoxs.forEach(element => startCounter(element));
+if (statsSection) {
+    window.onscroll = function () {
+        if (window.scrollY >= statsSection.offsetTop - 350) {
+            if (!started) {
+                startBoxs.forEach(element => startCounter(element));
+            }
+            started = true;
         }
-        started = true;
     }
 }
+
 
 //NOTE - dark mode
 /* const toggleCheckbox = document.querySelector('.toggle-checkbox');
